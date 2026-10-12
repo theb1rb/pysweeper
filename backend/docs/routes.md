@@ -1,0 +1,27 @@
+endpoints:
+- POST: game/new
+	- accepts a json object
+		- player name
+		- difficulty
+- POST: game/delete
+	- accepts player name
+	- deletes game on backend
+- GET: game/play/\<player name\>
+	- returns a json representation of the board in it's current state (if it exists)
+	- frontend renders the board based on json
+- POST: game/square/\<player name\>
+	- returns a json object of squares and their faces
+	- frontend will change the faces of the squares in the list
+	- if the list has a bomb in it, present game over
+- POST: game/over
+	- accepts json object with 
+		- player name
+		- date
+		- time elapsed
+		- difficulty
+	- stores game stats to scoreboard
+- GET: scoreboard/
+	- returns the scoreboard
+- GET: home/
+	- has new game form which includes the fields for the game/new endpoint
+	- on successful submit, redirect to game/play/\<player name\>

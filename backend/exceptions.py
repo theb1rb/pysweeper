@@ -2,20 +2,34 @@
 Pysweeper Exceptions
 """
 
-class PysweeperBadName(Exception):
+
+class PysweeperValueError(ValueError):
+    """Pysweeper related value error"""
+
+
+class PysweeperValidationError(Exception):
+    """Pysweeper data validation Exception"""
+
+
+class PysweeperBadName(PysweeperValidationError):
     """Thrown when a bad name is passed by the user"""
 
-class PysweeperBadCoords(Exception):
+
+class PysweeperBadCoords(PysweeperValidationError):
     """Thrown when a player sends coordinates outside of play area"""
 
-class PysweeperBadDifficulty(Exception):
+
+class PysweeperBadDifficulty(PysweeperValidationError):
     """Thrown when a player an invalid difficulty is passed by the user"""
 
-class PysweeperInvalidTimeDate(Exception):
+
+class PysweeperInvalidTimeDate(PysweeperValidationError):
     """Thrown when an invalid time or date is passed by the user"""
 
-class PysweeperGameDoesNotExist(Exception):
+
+class PysweeperGameDoesNotExist(PysweeperValueError):
     """Thrown when a player references a game that doesn't exist"""
 
-class PysweeperGameAlreadyExists(Exception):
+
+class PysweeperGameAlreadyExists(PysweeperValueError):
     """Thrown when a player passes a name that already exists"""

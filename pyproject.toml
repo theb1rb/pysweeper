@@ -1,0 +1,13 @@
+[tool.coverage.run]
+source = ["backend"]
+omit = [
+    "*/tests/*",
+]
+
+[tool.coverage.report]
+omit = [
+    "*/tests/*"
+]
+exclude_also = [
+    "if __name__ == .__main__.:",
+]

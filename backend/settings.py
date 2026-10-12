@@ -1,3 +1,4 @@
-FORBIDDEN_CHARS = set('@$<>?/\\{}[]~`| ')
+FORBIDDEN_CHARS = set("@$<>?/\\{}[]~`| ")
 MAX_DIFFICULTY = 10
 MAX_GRID = 100
+MIN_GRID = 15
